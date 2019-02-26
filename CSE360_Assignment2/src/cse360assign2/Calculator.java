@@ -19,7 +19,8 @@ public class Calculator
 	 */
 	public int getTotal () 
 	{
-		return 0;
+		//return 0;
+		return total;
 	}
 	
 	/* The add method adds the parameter to the total variable.
@@ -27,7 +28,7 @@ public class Calculator
 	 */
 	public void add (int value) 
 	{
-		
+		total = total + value;
 	}
 	
 	/* The subtract method subtracts the parameter from the total variable.
@@ -35,7 +36,7 @@ public class Calculator
 	 */
 	public void subtract (int value) 
 	{
-		
+		total = total - value;
 	}
 	
 	/* The multiple method multiplies the total variable by the parameter.
@@ -43,7 +44,7 @@ public class Calculator
 	 */
 	public void multiply (int value) 
 	{
-		
+		total = total * value;
 	}
 	
 	/* The divide method divides the total variable by the parameter. 
@@ -53,7 +54,11 @@ public class Calculator
 	 */
 	public void divide (int value) 
 	{
-		
+		if (value == 0)
+		{
+			total = 0;
+		}
+		total = total / value;
 	}
 	
 	/* The getHistory method returns an empty string.
