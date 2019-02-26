@@ -7,11 +7,13 @@ public class Calculator
 {
 	//declaring instance field total
 	private int total;
+	private String history;
 	
-	/* The default constructor sets instance field total to 0. */
+	/* The default constructor sets instance field total to 0 and history to a string typecasted total*/
 	public Calculator () 
 	{
 		total = 0;  // not needed - included for clarity
+		history = Integer.toString(total) + " ";
 	}
 	
 	/* The getTotal method returns the current total value.
@@ -29,6 +31,7 @@ public class Calculator
 	public void add (int value) 
 	{
 		total = total + value;
+		history += "+ " + value + " ";
 	}
 	
 	/* The subtract method subtracts the parameter from the total variable.
@@ -37,6 +40,8 @@ public class Calculator
 	public void subtract (int value) 
 	{
 		total = total - value;
+		history += "- " + value + " ";
+
 	}
 	
 	/* The multiple method multiplies the total variable by the parameter.
@@ -45,6 +50,7 @@ public class Calculator
 	public void multiply (int value) 
 	{
 		total = total * value;
+		history += "* " + value + " ";
 	}
 	
 	/* The divide method divides the total variable by the parameter. 
@@ -58,13 +64,20 @@ public class Calculator
 		{
 			total = 0;
 		}
-		total = total / value;
+		else
+		{
+			total = total / value;
+			history += "/ " + value + " ";
+		}
+		
 	}
 	
-	/* The getHistory method returns an empty string.
+	/* The getHistory method will print out the program's history of operations.
+	 * @return  a string containing the history of operations
 	 */
 	public String getHistory () 
-	{
-		return "";
+	{	
+		//return "";
+		return history;
 	}
 }
